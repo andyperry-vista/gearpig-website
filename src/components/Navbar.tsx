@@ -4,6 +4,7 @@ import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/stores/cartStore";
 import CartDrawer from "./CartDrawer";
+import navbarLogo from "@/assets/logo-navbar.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <img src="/logo-icon.png" alt="GearPig" className="h-10 w-auto" />
+              <img src={navbarLogo} alt="GearPig" className="h-10 w-auto" />
               <span className="font-display text-2xl font-bold text-foreground tracking-wider">
                 GEAR<span className="text-primary">PIG</span>
               </span>

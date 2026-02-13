@@ -2,9 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { Button } from "./ui/button";
+import { useCart } from "@/contexts/CartContext";
+import CartDrawer from "./CartDrawer";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
+  const { itemCount } = useCart();
 
   return (
     <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/10">
@@ -34,9 +38,18 @@ const Navbar = () => {
               <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hover:bg-secondary/10">
                 <User className="h-5 w-5" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-muted-foreground hover:text-primary hover:bg-secondary/10 relative">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setCartOpen(true)}
+                className="text-muted-foreground hover:text-primary hover:bg-secondary/10 relative"
+              >
                 <ShoppingCart className="h-5 w-5" />
-                <span className="absolute top-0 right-0 h-4 w-4 bg-primary text-[10px] font-bold text-white rounded-full flex items-center justify-center">0</span>
+                {itemCount > 0 && (
+                  <span className="absolute top-0 right-0 h-4 w-4 bg-primary text-[10px] font-bold text-white rounded-full flex items-center justify-center">
+                    {itemCount}
+                  </span>
+                )}
               </Button>
             </div>
           </div>
@@ -65,6 +78,7 @@ const Navbar = () => {
           </div>
         </div>
       )}
+      <CartDrawer open={cartOpen} onOpenChange={setCartOpen} />
     </nav>
   );
 };

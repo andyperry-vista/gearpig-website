@@ -12,7 +12,7 @@ export default {
         "2xl": "1400px",
       },
     },
-    extend: {
+      extend: {
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +57,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      fontFamily: {
+        display: ["'Black Ops One'", "cursive", "sans-serif"],
+        body: ["'Inter'", "sans-serif"],
+      },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(to bottom, rgba(10, 10, 12, 0.9), rgba(10, 10, 12, 0.8)), url("/hero-bg.jpg")',
+        'neon-glow': 'radial-gradient(circle at center, hsla(var(--primary), 0.15) 0%, transparent 70%)',
       },
       borderRadius: {
         lg: "var(--radius)",

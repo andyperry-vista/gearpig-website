@@ -5,6 +5,7 @@ import { Button } from "./ui/button";
 import { useCartStore } from "@/stores/cartStore";
 import CartDrawer from "./CartDrawer";
 import navbarLogo from "@/assets/logo-navbar.png";
+import logoText from "@/assets/logo-text-nav.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +20,7 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center gap-2">
               <img src={navbarLogo} alt="GearPig" className="h-10 w-auto" />
-              <span className="font-display text-2xl font-bold text-foreground tracking-wider">
-                GEAR<span className="text-primary">PIG</span>
-              </span>
+              <img src={logoText} alt="Gear Pig" className="h-6 w-auto" />
             </Link>
           </div>
           

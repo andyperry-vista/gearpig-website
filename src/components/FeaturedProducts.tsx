@@ -101,6 +101,7 @@ const FeaturedProducts = () => {
             {filtered.map((product) => (
               <ProductCard
                 key={product.id}
+                id={product.id}
                 title={product.title}
                 price={product.price}
                 image={product.image}

@@ -60,7 +60,7 @@ export default {
       },
       fontFamily: {
         display: ["'Beelzebrush Black BB'", "cursive", "sans-serif"],
-        sub: ["'Trade Winds'", "cursive", "sans-serif"],
+        sub: ["'Dom Casual BT'", "cursive", "sans-serif"],
         body: ["'Open Sans'", "sans-serif"],
       },
       backgroundImage: {

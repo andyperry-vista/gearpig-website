@@ -59,7 +59,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ["'Trade Winds'", "cursive", "sans-serif"],
+        display: ["'Beelzebrush Black BB'", "cursive", "sans-serif"],
         sub: ["'Trade Winds'", "cursive", "sans-serif"],
         body: ["'Open Sans'", "sans-serif"],
       },

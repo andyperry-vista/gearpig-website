@@ -59,8 +59,9 @@ export default {
         },
       },
       fontFamily: {
-        display: ["'Black Ops One'", "cursive", "sans-serif"],
-        body: ["'Inter'", "sans-serif"],
+        display: ["'Trade Winds'", "cursive", "sans-serif"],
+        sub: ["'Trade Winds'", "cursive", "sans-serif"],
+        body: ["'Open Sans'", "sans-serif"],
       },
       backgroundImage: {
         'hero-gradient': 'linear-gradient(to bottom, rgba(10, 10, 12, 0.9), rgba(10, 10, 12, 0.8)), url("/hero-bg.jpg")',

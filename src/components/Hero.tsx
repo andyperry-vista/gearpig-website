@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroPig from "@/assets/hero-pig.png";
+import logoFull from "@/assets/logo-full.png";
 
 const Hero = () => {
   return (
@@ -16,9 +17,9 @@ const Hero = () => {
       <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in-up">
           <img
-
+            src={logoFull}
             alt="GearPig Logo"
-            className="h-64 w-auto mx-auto mb-8 drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]" src="/lovable-uploads/62f7b6e2-89db-4711-9fbd-c58b4b74abb6.png" />
+            className="h-64 w-auto mx-auto mb-8 drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]" />
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
             UNLEASH YOUR <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">INNER PIG</span>

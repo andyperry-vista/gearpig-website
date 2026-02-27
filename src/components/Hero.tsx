@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-background to-background opacity-50" />
       
       {/* Background Pig Image */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0">
         <img src={heroPig} alt="" className="w-[600px] md:w-[800px] lg:w-[900px] opacity-15 select-none" />
       </div>
       

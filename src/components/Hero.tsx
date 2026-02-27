@@ -18,9 +18,9 @@ const Hero = () => {
         <div className="animate-fade-in-up">
           <div className="relative inline-block">
             {/* Pink glow - left side */}
-            <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-80 h-80 bg-[radial-gradient(circle,rgba(255,0,255,0.5)_0%,transparent_70%)] blur-2xl animate-[glow-pink_2s_ease-in-out_infinite]" />
-            {/* Blue glow - right side */}
-            <div className="absolute -right-40 top-1/2 -translate-y-1/2 w-80 h-80 bg-[radial-gradient(circle,rgba(0,150,255,0.5)_0%,transparent_70%)] blur-2xl animate-[glow-blue_2s_ease-in-out_infinite_1s]" />
+            <div className="absolute -left-40 top-1/2 -translate-y-1/2 w-80 h-80 bg-[radial-gradient(circle,rgba(0,150,255,0.5)_0%,transparent_70%)] blur-2xl animate-[glow-blue_2s_ease-in-out_infinite]" />
+            {/* Pink glow - right side */}
+            <div className="absolute -right-40 top-1/2 -translate-y-1/2 w-80 h-80 bg-[radial-gradient(circle,rgba(255,0,255,0.5)_0%,transparent_70%)] blur-2xl animate-[glow-pink_2s_ease-in-out_infinite_1s]" />
             <img
               src={logoFull}
               alt="GearPig Logo"

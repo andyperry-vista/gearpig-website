@@ -10,8 +10,7 @@ const AboutSection = () => {
             <img 
               src={mascotImg} 
               alt="GearPig Mascot" 
-              className="w-full max-w-md mx-auto drop-shadow-[0_0_30px_rgba(0,255,255,0.3)] animate-pulse"
-              style={{ animationDuration: '3s' }}
+              className="w-full max-w-md mx-auto animate-[neon-edge-glow_3s_ease-in-out_infinite]"
             />
           </div>
           <div className="order-1 lg:order-2">

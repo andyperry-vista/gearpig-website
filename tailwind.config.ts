@@ -97,6 +97,14 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.1" },
         },
+        "neon-edge-glow": {
+          "0%, 100%": {
+            filter: "drop-shadow(0 0 15px hsl(191 100% 50% / 0.4)) drop-shadow(0 0 30px hsl(334 100% 50% / 0.2))",
+          },
+          "50%": {
+            filter: "drop-shadow(0 0 25px hsl(334 100% 50% / 0.5)) drop-shadow(0 0 50px hsl(191 100% 50% / 0.3))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

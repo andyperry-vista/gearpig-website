@@ -1,4 +1,5 @@
 import { Button } from "./ui/button";
+import mascotImg from "@/assets/gearpig-mascot.png";
 
 const AboutSection = () => {
   return (
@@ -7,7 +8,7 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <img 
-              src="/logo-icon.png" 
+              src={mascotImg} 
               alt="GearPig Mascot" 
               className="w-full max-w-md mx-auto drop-shadow-[0_0_30px_rgba(0,255,255,0.3)] animate-pulse"
               style={{ animationDuration: '3s' }}

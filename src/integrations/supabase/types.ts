@@ -14,7 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      loyalty_tiers: {
+        Row: {
+          created_at: string
+          discount_percentage: number
+          id: number
+          min_points: number
+          name: string
+        }
+        Insert: {
+          created_at?: string
+          discount_percentage: number
+          id?: number
+          min_points: number
+          name: string
+        }
+        Update: {
+          created_at?: string
+          discount_percentage?: number
+          id?: number
+          min_points?: number
+          name?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          loyalty_points: number
+          phone: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          loyalty_points?: number
+          phone?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          loyalty_points?: number
+          phone?: string | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

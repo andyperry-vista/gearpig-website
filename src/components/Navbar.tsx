@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/stores/cartStore";
+import { useAuth } from "@/hooks/useAuth";
 import CartDrawer from "./CartDrawer";
 import navbarLogo from "@/assets/logo-navbar-full.png";
 
@@ -11,6 +12,7 @@ const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const items = useCartStore(state => state.items);
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
+  const { user } = useAuth();
 
   return (
     <nav className="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/10">
@@ -40,11 +42,20 @@ const Navbar = () => {
               >
                 <ShoppingCart className="h-5 w-5" />
                 {itemCount > 0 && (
-                  <span className="absolute top-0 right-0 h-4 w-4 bg-primary text-[10px] font-bold text-white rounded-full flex items-center justify-center">
+                  <span className="absolute top-0 right-0 h-4 w-4 bg-primary text-[10px] font-bold text-primary-foreground rounded-full flex items-center justify-center">
                     {itemCount}
                   </span>
                 )}
               </Button>
+              <Link to={user ? "/member" : "/auth"}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-muted-foreground hover:text-primary hover:bg-secondary/10"
+                >
+                  <User className="h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -57,11 +68,20 @@ const Navbar = () => {
             >
               <ShoppingCart className="h-5 w-5" />
               {itemCount > 0 && (
-                <span className="absolute top-0 right-0 h-4 w-4 bg-primary text-[10px] font-bold text-white rounded-full flex items-center justify-center">
+                <span className="absolute top-0 right-0 h-4 w-4 bg-primary text-[10px] font-bold text-primary-foreground rounded-full flex items-center justify-center">
                   {itemCount}
                 </span>
               )}
             </Button>
+            <Link to={user ? "/member" : "/auth"}>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-muted-foreground hover:text-foreground mr-2"
+              >
+                <User className="h-5 w-5" />
+              </Button>
+            </Link>
             <Button
               variant="ghost"
               size="icon"

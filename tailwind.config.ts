@@ -89,6 +89,14 @@ export default {
             height: "0",
           },
         },
+        "glow-pink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.1" },
+        },
+        "glow-blue": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.1" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

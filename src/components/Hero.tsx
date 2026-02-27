@@ -19,7 +19,7 @@ const Hero = () => {
           <img
             src={logoFull}
             alt="GearPig Logo"
-            className="h-96 w-auto mx-auto mb-8 drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]" />
+            className="h-[32rem] w-auto mx-auto mb-8 drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]" />
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
             UNLEASH YOUR <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">INNER PIG</span>

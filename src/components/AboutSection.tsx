@@ -7,11 +7,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <img 
-              src={mascotImg} 
-              alt="GearPig Mascot" 
-              className="w-full max-w-md mx-auto animate-[neon-edge-glow_3s_ease-in-out_infinite]"
-            />
+            <img
+
+              alt="GearPig Mascot"
+              className="w-full max-w-md mx-auto animate-[neon-edge-glow_3s_ease-in-out_infinite] border-secondary rounded-none shadow-lg opacity-100 border-8" src="/lovable-uploads/bc498d4f-52f5-4336-aed1-d06632907a80.png" />
+
           </div>
           <div className="order-1 lg:order-2">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
@@ -29,8 +29,8 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AboutSection;

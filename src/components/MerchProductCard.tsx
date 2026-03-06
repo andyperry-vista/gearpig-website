@@ -58,7 +58,7 @@ const MerchProductCard = () => {
       <CardContent className="p-4 space-y-4">
         <div>
           <h3 className="text-lg font-bold text-foreground">Signature Collection Tee</h3>
-          <p className="text-xl font-bold text-primary mt-1">£29.99</p>
+          <p className="text-xl font-bold text-primary mt-1">A$29.99</p>
         </div>
 
         {/* Color swatches */}

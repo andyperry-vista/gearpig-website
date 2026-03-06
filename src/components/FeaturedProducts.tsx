@@ -6,7 +6,7 @@ import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 
 const FeaturedProducts = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { products, loading, error } = useShopifyProducts(20);
+  const { products, loading, error } = useShopifyProducts(6);
 
   const filtered = useMemo(() => {
     if (!searchQuery) return products;

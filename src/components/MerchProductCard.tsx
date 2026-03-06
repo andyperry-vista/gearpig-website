@@ -15,10 +15,10 @@ import whiteFront from "@/assets/merch/white-front.png";
 import whiteBack from "@/assets/merch/white-back.png";
 
 const COLORS = [
-  { id: "cream", label: "Cream", hex: "#F5F0E1", front: creamFront, back: creamBack },
   { id: "black", label: "Black", hex: "#1a1a1a", front: blackFront, back: blackBack },
   { id: "navy", label: "Navy", hex: "#1B2A4A", front: navyFront, back: navyBack },
   { id: "army", label: "Army Green", hex: "#4B5320", front: armyFront, back: armyBack },
+  { id: "cream", label: "Cream", hex: "#F5F0E1", front: creamFront, back: creamBack },
   { id: "white", label: "White", hex: "#F8F8F8", front: whiteFront, back: whiteBack },
 ] as const;
 

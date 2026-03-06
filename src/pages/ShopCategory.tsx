@@ -17,9 +17,13 @@ import { getAdultCategoryBySlug } from "@/lib/channels";
 
 const ShopCategory = () => {
   const { category } = useParams<{ category: string }>();
-  const cat = category ? getCategoryBySlug(category) : undefined;
+  const cat = category ? getAdultCategoryBySlug(category) : undefined;
 
-  const { products, loading, error } = useShopifyProducts(50, cat?.query);
+  const { products: shopifyProducts, loading: sLoading, error: sError } = useShopifyProducts(50, cat?.query);
+  const { products: dbProducts, loading: dLoading, error: dError } = useDropshipProducts(50, cat?.slug);
+  const products = [...shopifyProducts, ...dbProducts];
+  const loading = sLoading || dLoading;
+  const error = sError || dError;
 
   if (!cat) return <Navigate to="/shop" replace />;
 

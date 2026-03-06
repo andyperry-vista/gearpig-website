@@ -6,34 +6,38 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { Input } from "@/components/ui/input";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
-import { CATEGORIES } from "@/lib/categories";
+import { useDropshipProducts } from "@/hooks/useDropshipProducts";
+import { ADULT_CATEGORIES } from "@/lib/channels";
 
 const Shop = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { products, loading, error } = useShopifyProducts(50);
+  const { products: shopifyProducts, loading: sLoading, error: sError } = useShopifyProducts(50, "tag:kink-toys OR tag:gear-equipment OR tag:wellness OR tag:adult OR tag:technology");
+  const { products: dbProducts, loading: dLoading, error: dError } = useDropshipProducts(50);
+
+  const loading = sLoading || dLoading;
+  const error = sError || dError;
+  const allProducts = [...shopifyProducts, ...dbProducts];
 
   const filtered = useMemo(() => {
-    if (!searchQuery) return products;
-    return products.filter((p) =>
+    if (!searchQuery) return allProducts;
+    return allProducts.filter((p) =>
       p.node.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-  }, [products, searchQuery]);
+  }, [allProducts, searchQuery]);
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <main className="pt-20">
-        {/* Hero */}
         <section className="py-16 text-center">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4">
-              SHOP <span className="text-primary">ALL</span>
+              ADULT <span className="text-primary">STORE</span>
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto mb-10">
-              Browse the full GearPig catalog or dive into a category below.
+              Premium adult toys, enhancers & wellness products.
             </p>
 
-            {/* Search */}
             <div className="flex justify-center mb-12">
               <div className="relative w-full sm:w-72">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -48,14 +52,13 @@ const Shop = () => {
           </div>
         </section>
 
-        {/* Category Grid */}
         <section className="pb-16">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-display text-foreground mb-6">
               SHOP BY <span className="text-primary">CATEGORY</span>
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
-              {CATEGORIES.map((cat) => {
+              {ADULT_CATEGORIES.map((cat) => {
                 const Icon = cat.icon;
                 return (
                   <Link
@@ -71,7 +74,6 @@ const Shop = () => {
               })}
             </div>
 
-            {/* All Products */}
             <h2 className="text-2xl font-display text-foreground mb-6">
               ALL <span className="text-primary">PRODUCTS</span>
             </h2>

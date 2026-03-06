@@ -21,6 +21,8 @@ const AppContent = () => {
   return (
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/merch" element={<Merch />} />
+      <Route path="/merch/:category" element={<MerchCategory />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:category" element={<ShopCategory />} />
       <Route path="/product/:handle" element={<ProductDetail />} />

@@ -26,7 +26,7 @@ const Merch = () => {
         <section className="py-16 text-center">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4 neon-heading">
-              GEAR PIG <span className="text-primary">MERCH</span>
+              GEAR PIG MERCH
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto mb-10">
               Branded apparel & merchandise — print-to-order exclusives.
@@ -49,7 +49,7 @@ const Merch = () => {
         <section className="pb-16">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-display text-foreground mb-6 neon-heading">
-              SHOP BY <span className="text-primary">CATEGORY</span>
+              SHOP BY CATEGORY
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-16">
               {MERCH_CATEGORIES.map((cat) => {
@@ -71,7 +71,7 @@ const Merch = () => {
             </div>
 
             <h2 className="text-2xl font-display text-foreground mb-6 neon-heading">
-              ALL <span className="text-primary">MERCH</span>
+              ALL MERCH
             </h2>
 
             {loading ? (

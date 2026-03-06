@@ -39,7 +39,7 @@ const FeaturedMerch = () => {
 
         <div className="flex justify-center mt-10">
           <Link to="/merch">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2">
+            <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground gap-2 neon-button">
               Shop All Merch <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>

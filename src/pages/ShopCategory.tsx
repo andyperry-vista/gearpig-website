@@ -62,7 +62,7 @@ const ShopCategory = () => {
                 <Icon className="h-7 w-7 text-primary" />
               </div>
               <div>
-                <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground">
+                <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground neon-heading">
                   {cat.name.toUpperCase()}
                 </h1>
                 <p className="text-muted-foreground">{cat.description}</p>

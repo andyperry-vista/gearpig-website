@@ -23,7 +23,7 @@ const AboutSection = () => {
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Whether you're into leather, rubber, sports gear, or just want to look good while being bad, we've got you covered. Our products are designed for durability, comfort, and maximum impact.
             </p>
-            <Button className="bg-secondary hover:bg-secondary/90 text-black font-bold text-lg px-8 py-6 rounded-none">
+            <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold text-lg px-8 py-6 rounded-none neon-button">
               READ OUR STORY
             </Button>
           </div>

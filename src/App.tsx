@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useCartSync } from "@/hooks/useCartSync";
+import { useNeonScroll } from "@/hooks/useNeonScroll";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";

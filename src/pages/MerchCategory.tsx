@@ -3,29 +3,19 @@ import { Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
-import { useDropshipProducts } from "@/hooks/useDropshipProducts";
 import {
-  Breadcrumb,
-  BreadcrumbList,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-  BreadcrumbPage,
+  Breadcrumb, BreadcrumbList, BreadcrumbItem,
+  BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
-import { getAdultCategoryBySlug } from "@/lib/channels";
+import { getMerchCategoryBySlug } from "@/lib/channels";
 
-const ShopCategory = () => {
+const MerchCategory = () => {
   const { category } = useParams<{ category: string }>();
-  const cat = category ? getAdultCategoryBySlug(category) : undefined;
+  const cat = category ? getMerchCategoryBySlug(category) : undefined;
+  const { products, loading, error } = useShopifyProducts(50, cat?.query);
 
-  const { products: shopifyProducts, loading: sLoading, error: sError } = useShopifyProducts(50, cat?.query);
-  const { products: dbProducts, loading: dLoading, error: dError } = useDropshipProducts(50, cat?.slug);
-  const products = [...shopifyProducts, ...dbProducts];
-  const loading = sLoading || dLoading;
-  const error = sError || dError;
-
-  if (!cat) return <Navigate to="/shop" replace />;
+  if (!cat) return <Navigate to="/merch" replace />;
 
   const Icon = cat.icon;
 
@@ -35,19 +25,14 @@ const ShopCategory = () => {
       <main className="pt-20">
         <section className="py-16">
           <div className="container mx-auto px-4">
-            {/* Breadcrumbs */}
             <Breadcrumb className="mb-8">
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/">Home</Link>
-                  </BreadcrumbLink>
+                  <BreadcrumbLink asChild><Link to="/">Home</Link></BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <Link to="/shop">Shop</Link>
-                  </BreadcrumbLink>
+                  <BreadcrumbLink asChild><Link to="/merch">Merch</Link></BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
@@ -56,7 +41,6 @@ const ShopCategory = () => {
               </BreadcrumbList>
             </Breadcrumb>
 
-            {/* Header */}
             <div className="flex items-center gap-4 mb-10">
               <div className="flex items-center justify-center h-14 w-14 rounded-lg border border-primary/30 bg-card">
                 <Icon className="h-7 w-7 text-primary" />
@@ -69,7 +53,6 @@ const ShopCategory = () => {
               </div>
             </div>
 
-            {/* Products */}
             {loading ? (
               <div className="flex justify-center py-12">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -95,4 +78,4 @@ const ShopCategory = () => {
   );
 };
 
-export default ShopCategory;
+export default MerchCategory;

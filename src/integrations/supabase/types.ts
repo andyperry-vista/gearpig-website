@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      dropship_products: {
+        Row: {
+          available: boolean
+          category: string | null
+          created_at: string
+          currency_code: string
+          description: string | null
+          handle: string
+          id: string
+          image_url: string | null
+          price: number
+          sku: string | null
+          stock_quantity: number
+          supplier_name: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          available?: boolean
+          category?: string | null
+          created_at?: string
+          currency_code?: string
+          description?: string | null
+          handle: string
+          id?: string
+          image_url?: string | null
+          price?: number
+          sku?: string | null
+          stock_quantity?: number
+          supplier_name?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          available?: boolean
+          category?: string | null
+          created_at?: string
+          currency_code?: string
+          description?: string | null
+          handle?: string
+          id?: string
+          image_url?: string | null
+          price?: number
+          sku?: string | null
+          stock_quantity?: number
+          supplier_name?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       loyalty_tiers: {
         Row: {
           created_at: string

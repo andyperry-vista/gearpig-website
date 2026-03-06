@@ -3,25 +3,19 @@ import { Loader2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductCard from "./ProductCard";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
-import { useDropshipProducts } from "@/hooks/useDropshipProducts";
 
-const FeaturedProducts = () => {
-  const { products: shopifyProducts, loading: sLoading } = useShopifyProducts(4, "tag:kink-toys OR tag:gear-equipment OR tag:wellness OR tag:adult");
-  const { products: dbProducts, loading: dLoading } = useDropshipProducts(4);
-
-  const loading = sLoading || dLoading;
-  // Merge and take first 4
-  const allProducts = [...shopifyProducts, ...dbProducts].slice(0, 4);
+const FeaturedMerch = () => {
+  const { products, loading, error } = useShopifyProducts(4, "tag:merch OR tag:branded OR product_type:Apparel");
 
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
-            ADULT <span className="text-primary">STORE</span>
+            GEAR PIG <span className="text-primary">MERCH</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Premium adult toys, enhancers & wellness products — discreetly delivered.
+            Rep the brand — print-to-order streetwear & exclusive merchandise.
           </p>
         </div>
 
@@ -29,22 +23,24 @@ const FeaturedProducts = () => {
           <div className="flex justify-center py-12">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
           </div>
-        ) : allProducts.length > 0 ? (
+        ) : error ? (
+          <p className="text-center text-destructive py-12">{error}</p>
+        ) : products.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {allProducts.map((product) => (
+            {products.map((product) => (
               <ProductCard key={product.node.id} product={product} />
             ))}
           </div>
         ) : (
           <p className="text-center text-muted-foreground py-12">
-            Products dropping soon — stay tuned!
+            Merch drops coming soon — stay tuned!
           </p>
         )}
 
         <div className="flex justify-center mt-10">
-          <Link to="/shop">
+          <Link to="/merch">
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2">
-              Shop Adult Store <ArrowRight className="h-4 w-4" />
+              Shop All Merch <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>
         </div>
@@ -53,4 +49,4 @@ const FeaturedProducts = () => {
   );
 };
 
-export default FeaturedProducts;
+export default FeaturedMerch;

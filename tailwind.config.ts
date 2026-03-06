@@ -99,10 +99,10 @@ export default {
         },
         "neon-edge-glow": {
           "0%, 100%": {
-            filter: "drop-shadow(0 0 15px hsl(191 100% 50% / 0.4)) drop-shadow(0 0 30px hsl(334 100% 50% / 0.2))",
+            filter: "drop-shadow(0 0 6px hsl(191 100% 50% / 0.3)) drop-shadow(0 0 12px hsl(334 100% 50% / 0.15))",
           },
           "50%": {
-            filter: "drop-shadow(0 0 25px hsl(334 100% 50% / 0.5)) drop-shadow(0 0 50px hsl(191 100% 50% / 0.3))",
+            filter: "drop-shadow(0 0 10px hsl(334 100% 50% / 0.35)) drop-shadow(0 0 18px hsl(191 100% 50% / 0.2))",
           },
         },
       },

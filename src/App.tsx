@@ -13,12 +13,15 @@ import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";
 import NotFound from "./pages/NotFound";
+import BackgroundPig from "./components/BackgroundPig";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
   useCartSync();
   return (
+    <>
+    <BackgroundPig />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/merch" element={<Merch />} />
@@ -31,6 +34,7 @@ const AppContent = () => {
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </>
   );
 };
 

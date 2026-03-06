@@ -59,7 +59,7 @@ const Footer = () => {
                 placeholder="Enter your email" 
                 className="bg-secondary/5 border border-border/10 rounded-sm px-4 py-2 text-foreground text-sm focus:outline-none focus:border-primary w-full"
               />
-              <button className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-sm font-bold text-sm">
+              <button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground px-4 py-2 rounded-sm font-bold text-sm neon-button">
                 JOIN
               </button>
             </form>

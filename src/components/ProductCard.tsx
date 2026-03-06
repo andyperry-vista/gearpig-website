@@ -58,7 +58,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </CardContent>
         <CardFooter className="p-4 pt-0">
           <Button
-            className="w-full bg-secondary/10 hover:bg-primary hover:text-white text-foreground border border-secondary/20 hover:border-primary transition-all duration-300"
+            className="w-full bg-secondary/10 hover:bg-secondary hover:text-secondary-foreground text-foreground border border-secondary/20 hover:border-secondary transition-all duration-300 neon-button"
             onClick={handleAddToCart}
             disabled={isLoading || !selectedVariant?.availableForSale}
           >

@@ -1,65 +1,55 @@
 
 
-# Neon Styling Overhaul
+# Shop Page with Category Subpages
 
-## Summary
-Remove all gradient text effects across the site. Make primary highlight text color pink, secondary/buttons neon blue. Add neon glow effects to all headings and buttons with animated hover states. Make the background pig image consistent across all pages (not just hero).
+## Overview
+Add a main Shop page (`/shop`) with 7 category subpages, each filtering products from Shopify by category tag/type. The Navbar already links to `/shop`.
 
-## Changes
+## Categories
+1. **Apparel** — `/shop/apparel`
+2. **Technology** — `/shop/technology`
+3. **Kink Toys** — `/shop/kink-toys`
+4. **Activewear** — `/shop/activewear`
+5. **Gear & Equipment** — `/shop/gear-equipment`
+6. **Wellness & Enhancers** — `/shop/wellness-enhancers`
+7. **Accessories** — `/shop/accessories`
 
-### 1. Remove Gradient Text
-Only one instance found — Hero.tsx line 31:
+## What Gets Built
+
+**Main Shop Page (`/shop`)** — Displays all products with a search bar, plus a category navigation bar showing all 7 categories as clickable cards/links with icons.
+
+**Category Pages (`/shop/:category`)** — A single reusable page component that reads the category from the URL, displays a header for that category, and filters Shopify products using the `query` parameter (filtering by product type or tag matching the category name).
+
+**Updated Navbar** — The "Shop All" link already points to `/shop`. A dropdown or the shop page itself will let users navigate to subcategories.
+
+## Technical Details
+
+### New Files
+- **`src/pages/Shop.tsx`** — Main shop page with category grid and all-products listing
+- **`src/pages/ShopCategory.tsx`** — Reusable category page that reads `:category` param, maps it to a Shopify product type/tag query, and renders filtered products
+
+### Modified Files
+- **`src/App.tsx`** — Add routes: `/shop` and `/shop/:category`
+- **`src/components/Navbar.tsx`** — Optionally update "Shop All" to include a dropdown with category links
+
+### Category Filtering
+Each category slug maps to a Shopify Storefront API query string (e.g., `product_type:Apparel` or `tag:apparel`). The existing `useShopifyProducts` hook already accepts a `query` parameter, so no changes needed there.
+
+### Category Config
+A shared config object maps slugs to display names, descriptions, and icons:
+
+```text
+apparel        -> "Apparel"           (Shirt icon)
+technology     -> "Technology"        (Cpu icon)
+kink-toys      -> "Kink Toys"         (Heart icon)
+activewear     -> "Activewear"        (Dumbbell icon)
+gear-equipment -> "Gear & Equipment"  (Wrench icon)
+wellness-enhancers -> "Wellness & Enhancers" (Sparkles icon)
+accessories    -> "Accessories"       (Watch icon)
 ```
-UNLEASH YOUR <span class="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">INNER PIG</span>
-```
-Replace with plain `text-primary` (pink, no gradient).
 
-### 2. Color Role Update
-- **Highlighted heading words** (`<span>` accents): Keep as `text-primary` (pink) — already correct in most places
-- **Buttons**: Switch to neon blue (`bg-secondary`) base with blue neon glow. Currently some buttons use `bg-primary` (pink) — change these to `bg-secondary`
-- **Outline/CTA buttons**: Use `border-secondary text-secondary` instead of `border-primary text-primary`
-
-### 3. Neon Glow on Headings
-Add a CSS utility class `neon-heading` that applies a text-shadow glow matching the pink neon color. Apply to all `font-display` headings across:
-- Hero h1, FeaturedMerch h2, FeaturedProducts h2, AboutSection h2
-- Shop h1/h2, Merch h1/h2, ShopCategory h1, MerchCategory h1
-
-CSS in `index.css`:
-```css
-.neon-heading {
-  text-shadow: 0 0 10px hsl(334 100% 50% / 0.5), 0 0 30px hsl(334 100% 50% / 0.2);
-}
-```
-
-### 4. Neon Glow + Hover Animation on Buttons
-Add a `neon-button` utility class for blue neon glow with animated hover:
-```css
-.neon-button {
-  box-shadow: 0 0 10px hsl(191 100% 50% / 0.3), 0 0 20px hsl(191 100% 50% / 0.1);
-  transition: all 0.3s ease;
-}
-.neon-button:hover {
-  box-shadow: 0 0 15px hsl(191 100% 50% / 0.5), 0 0 40px hsl(191 100% 50% / 0.3), 0 0 60px hsl(191 100% 50% / 0.1);
-  transform: scale(1.05);
-}
-```
-Apply to all CTA buttons (Hero, About, Featured sections, ProductCard "Add to Cart", Shop/Merch pages).
-
-### 5. Consistent Background Pig
-Currently the pig is `fixed` in Hero.tsx only. Move it to a shared layout wrapper so it shows on every page. Add a `BackgroundPig` component rendered in `App.tsx` outside route content, using `fixed` positioning at 15% opacity, centered.
-
-### Files Modified
-- **`src/index.css`** — Add `.neon-heading` and `.neon-button` utility classes
-- **`src/components/Hero.tsx`** — Remove gradient text, update button colors to blue, add neon classes, remove pig (moved to global)
-- **`src/components/AboutSection.tsx`** — Add neon heading class, update button to blue with neon class
-- **`src/components/FeaturedMerch.tsx`** — Add neon heading, update button to blue
-- **`src/components/FeaturedProducts.tsx`** — Add neon heading, update button to blue
-- **`src/components/ProductCard.tsx`** — Update "Add to Cart" button to blue neon style
-- **`src/pages/Shop.tsx`** — Add neon heading classes
-- **`src/pages/Merch.tsx`** — Add neon heading classes
-- **`src/pages/ShopCategory.tsx`** — Add neon heading class
-- **`src/pages/MerchCategory.tsx`** — Add neon heading class
-- **`src/components/Footer.tsx`** — Update JOIN button to blue neon
-- **`src/App.tsx`** — Add global `BackgroundPig` component
-- **New: `src/components/BackgroundPig.tsx`** — Fixed centered pig at 15% opacity
+### Styling
+- Dark background consistent with brand guidelines
+- Category cards with `bg-[#1a1a2e]`, pink border at 30% opacity, hover glow
+- Breadcrumb navigation on category pages (Home > Shop > Category)
 

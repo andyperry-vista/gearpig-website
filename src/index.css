@@ -115,3 +115,17 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+.neon-heading {
+  text-shadow: 0 0 10px hsl(334 100% 50% / 0.5), 0 0 30px hsl(334 100% 50% / 0.2);
+}
+
+.neon-button {
+  box-shadow: 0 0 10px hsl(191 100% 50% / 0.3), 0 0 20px hsl(191 100% 50% / 0.1);
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 15px hsl(191 100% 50% / 0.5), 0 0 40px hsl(191 100% 50% / 0.3), 0 0 60px hsl(191 100% 50% / 0.1);
+  transform: scale(1.05);
+}

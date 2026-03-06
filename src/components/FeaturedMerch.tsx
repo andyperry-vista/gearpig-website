@@ -11,7 +11,7 @@ const FeaturedMerch = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-4 neon-heading">
             GEAR PIG <span className="text-primary">MERCH</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -39,7 +39,7 @@ const FeaturedMerch = () => {
 
         <div className="flex justify-center mt-10">
           <Link to="/merch">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground gap-2">
+            <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground gap-2 neon-button">
               Shop All Merch <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>

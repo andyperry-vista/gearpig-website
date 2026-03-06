@@ -25,7 +25,7 @@ const Merch = () => {
       <main className="pt-20">
         <section className="py-16 text-center">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4 neon-heading">
               GEAR PIG <span className="text-primary">MERCH</span>
             </h1>
             <p className="text-muted-foreground max-w-xl mx-auto mb-10">

@@ -117,7 +117,7 @@ All colors MUST be HSL.
 }
 
 .neon-heading {
-  animation: neon-pulse 3s ease-in-out infinite;
+  animation: neon-pulse 10s ease-in-out infinite;
 }
 
 @keyframes neon-pulse {

@@ -71,7 +71,7 @@ const Merch = () => {
             </div>
 
             <h2 className="text-2xl font-display text-foreground mb-6 neon-heading">
-              ALL <span className="text-primary">MERCH</span>
+              ALL MERCH
             </h2>
 
             {loading ? (

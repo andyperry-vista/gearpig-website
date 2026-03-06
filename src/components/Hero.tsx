@@ -22,8 +22,8 @@ const Hero = () => {
               className="relative z-10 h-[32rem] w-auto mx-auto mb-8 drop-shadow-[0_0_15px_hsl(334_100%_50%/0.5)]" />
           </div>
 
-          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-            UNLEASH YOUR <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">INNER PIG</span>
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight neon-heading">
+            UNLEASH YOUR <span className="text-primary">INNER PIG</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Premium gear, apparel, and toys for the bold. Express yourself with our exclusive collection designed for the community.

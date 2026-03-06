@@ -122,10 +122,13 @@ All colors MUST be HSL.
 
 @keyframes neon-pulse {
   0%, 100% {
-    text-shadow: 0 0 6px hsl(273 100% 61% / 0.3), 0 0 16px hsl(273 100% 61% / 0.1);
+    text-shadow: 0 0 8px hsl(191 100% 50% / 0.4), 0 0 20px hsl(191 100% 50% / 0.15);
   }
-  50% {
-    text-shadow: 0 0 12px hsl(273 100% 61% / 0.5), 0 0 30px hsl(273 100% 61% / 0.2), 0 0 50px hsl(273 100% 61% / 0.08);
+  33% {
+    text-shadow: 0 0 10px hsl(273 100% 61% / 0.5), 0 0 25px hsl(273 100% 61% / 0.2);
+  }
+  66% {
+    text-shadow: 0 0 10px hsl(334 100% 50% / 0.5), 0 0 25px hsl(334 100% 50% / 0.2);
   }
 }
 

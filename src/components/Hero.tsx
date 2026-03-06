@@ -23,7 +23,7 @@ const Hero = () => {
           </div>
 
           <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight neon-heading">
-            UNLEASH YOUR <span className="text-primary">INNER PIG</span>
+            UNLEASH YOUR INNER PIG
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Premium gear, apparel, and toys for the bold. Express yourself with our exclusive collection designed for the community.

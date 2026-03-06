@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
 import heroPig from "@/assets/hero-pig.png";
 import logoFull from "@/assets/logo-full.png";
 

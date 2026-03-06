@@ -7,6 +7,8 @@ import { useCartSync } from "@/hooks/useCartSync";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
+import Merch from "./pages/Merch";
+import MerchCategory from "./pages/MerchCategory";
 import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";

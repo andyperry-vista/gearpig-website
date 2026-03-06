@@ -20,7 +20,7 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   useCartSync();
-  return (
+  useNeonScroll();
     <>
     <BackgroundPig />
     <Routes>

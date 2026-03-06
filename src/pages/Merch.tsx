@@ -58,11 +58,13 @@ const Merch = () => {
                   <Link
                     key={cat.slug}
                     to={`/merch/${cat.slug}`}
-                    className="group flex flex-col items-center gap-3 rounded-lg border border-primary/30 bg-card p-6 text-center transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_hsl(334_100%_50%/0.15)]"
+                    className={`group flex flex-col items-center gap-3 rounded-lg border border-primary/30 bg-card p-6 text-center transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_hsl(334_100%_50%/0.15)] ${cat.featured ? "col-span-2 sm:col-span-3 flex-row justify-center sm:gap-6 py-8 bg-gradient-to-r from-card via-primary/5 to-card" : ""}`}
                   >
-                    <Icon className="h-8 w-8 text-secondary group-hover:text-primary transition-colors" />
-                    <span className="font-bold text-foreground text-sm">{cat.name}</span>
-                    <span className="text-xs text-muted-foreground hidden sm:block">{cat.description}</span>
+                    <Icon className={`text-secondary group-hover:text-primary transition-colors ${cat.featured ? "h-10 w-10" : "h-8 w-8"}`} />
+                    <div className={cat.featured ? "text-left" : ""}>
+                      <span className={`font-bold text-foreground ${cat.featured ? "text-lg" : "text-sm"}`}>{cat.name}</span>
+                      <span className={`text-muted-foreground block ${cat.featured ? "text-sm mt-1" : "text-xs hidden sm:block"}`}>{cat.description}</span>
+                    </div>
                   </Link>
                 );
               })}

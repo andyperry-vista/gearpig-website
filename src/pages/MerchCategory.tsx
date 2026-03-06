@@ -3,6 +3,7 @@ import { Loader2 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
+import MerchProductCard from "@/components/MerchProductCard";
 import {
   Breadcrumb, BreadcrumbList, BreadcrumbItem,
   BreadcrumbLink, BreadcrumbSeparator, BreadcrumbPage,
@@ -10,10 +11,13 @@ import {
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { getMerchCategoryBySlug } from "@/lib/channels";
 
+const STATIC_CATEGORIES = ["signature-tees"];
+
 const MerchCategory = () => {
   const { category } = useParams<{ category: string }>();
   const cat = category ? getMerchCategoryBySlug(category) : undefined;
-  const { products, loading, error } = useShopifyProducts(50, cat?.query);
+  const isStatic = category ? STATIC_CATEGORIES.includes(category) : false;
+  const { products, loading, error } = useShopifyProducts(isStatic ? 0 : 50, isStatic ? undefined : cat?.query);
 
   if (!cat) return <Navigate to="/merch" replace />;
 
@@ -53,7 +57,11 @@ const MerchCategory = () => {
               </div>
             </div>
 
-            {loading ? (
+            {isStatic ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <MerchProductCard />
+              </div>
+            ) : loading ? (
               <div className="flex justify-center py-12">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
               </div>

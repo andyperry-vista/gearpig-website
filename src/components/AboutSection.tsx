@@ -10,7 +10,7 @@ const AboutSection = () => {
             <img
 
               alt="GearPig Mascot"
-              className="w-full max-w-md mx-auto animate-[neon-edge-glow_5s_ease-in-out_infinite] border-secondary rounded-none shadow-none opacity-100 border-8" src="/lovable-uploads/bc498d4f-52f5-4336-aed1-d06632907a80.png" />
+              className="w-full max-w-md mx-auto border-secondary rounded-none shadow-none opacity-100 border-8" src="/lovable-uploads/bc498d4f-52f5-4336-aed1-d06632907a80.png" />
 
           </div>
           <div className="order-1 lg:order-2">

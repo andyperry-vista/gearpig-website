@@ -30,7 +30,7 @@ const MerchProductCard = () => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   return (
-    <Card className="bg-card border-border/20 overflow-hidden hover:border-primary/50 transition-colors duration-300 max-w-sm w-full">
+    <Card className="bg-[hsl(320,60%,15%)] border-border/20 overflow-hidden hover:border-primary/50 transition-colors duration-300 max-w-sm w-full">
       {/* Image with front/back toggle */}
       <div className="relative aspect-square overflow-hidden bg-muted cursor-pointer" onClick={() => setView(v => v === "front" ? "back" : "front")}>
         <img

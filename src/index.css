@@ -117,7 +117,16 @@ All colors MUST be HSL.
 }
 
 .neon-heading {
-  text-shadow: 0 0 8px hsl(273 100% 61% / 0.4), 0 0 20px hsl(273 100% 61% / 0.15);
+  animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 0 0 6px hsl(273 100% 61% / 0.3), 0 0 16px hsl(273 100% 61% / 0.1);
+  }
+  50% {
+    text-shadow: 0 0 12px hsl(273 100% 61% / 0.5), 0 0 30px hsl(273 100% 61% / 0.2), 0 0 50px hsl(273 100% 61% / 0.08);
+  }
 }
 
 .neon-button {

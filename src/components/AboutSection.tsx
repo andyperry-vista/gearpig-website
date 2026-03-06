@@ -14,8 +14,8 @@ const AboutSection = () => {
 
           </div>
           <div className="order-1 lg:order-2">
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6">
-              MORE THAN JUST <span className="text-secondary">GEAR</span>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6 neon-heading">
+              MORE THAN JUST <span className="text-primary">GEAR</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               GearPig isn't just a brand; it's a statement. Born from the underground and forged in neon, we create premium gear for men who aren't afraid to embrace their primal side.

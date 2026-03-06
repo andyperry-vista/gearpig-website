@@ -25,7 +25,7 @@ const COLORS = [
 const SIZES = ["XS", "S", "M", "L", "XL", "2XL", "3XL"] as const;
 
 const MerchProductCard = () => {
-  const [selectedColor, setSelectedColor] = useState(COLORS[0]);
+  const [selectedColor, setSelectedColor] = useState<typeof COLORS[number]>(COLORS[0]);
   const [view, setView] = useState<"front" | "back">("front");
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 

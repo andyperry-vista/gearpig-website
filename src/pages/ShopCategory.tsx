@@ -13,7 +13,7 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
-import { getCategoryBySlug } from "@/lib/categories";
+import { getAdultCategoryBySlug } from "@/lib/channels";
 
 const ShopCategory = () => {
   const { category } = useParams<{ category: string }>();

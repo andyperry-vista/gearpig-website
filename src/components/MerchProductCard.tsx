@@ -15,10 +15,10 @@ import whiteFront from "@/assets/merch/white-front.png";
 import whiteBack from "@/assets/merch/white-back.png";
 
 const COLORS = [
-  { id: "cream", label: "Cream", hex: "#F5F0E1", front: creamFront, back: creamBack },
   { id: "black", label: "Black", hex: "#1a1a1a", front: blackFront, back: blackBack },
   { id: "navy", label: "Navy", hex: "#1B2A4A", front: navyFront, back: navyBack },
   { id: "army", label: "Army Green", hex: "#4B5320", front: armyFront, back: armyBack },
+  { id: "cream", label: "Cream", hex: "#F5F0E1", front: creamFront, back: creamBack },
   { id: "white", label: "White", hex: "#F8F8F8", front: whiteFront, back: whiteBack },
 ] as const;
 
@@ -30,7 +30,7 @@ const MerchProductCard = () => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
 
   return (
-    <Card className="bg-card border-border/20 overflow-hidden hover:border-primary/50 transition-colors duration-300 max-w-sm w-full">
+    <Card className="bg-[hsl(320,60%,15%)] border-border/20 overflow-hidden hover:border-primary/50 transition-colors duration-300 max-w-sm w-full">
       {/* Image with front/back toggle */}
       <div className="relative aspect-square overflow-hidden bg-muted cursor-pointer" onClick={() => setView(v => v === "front" ? "back" : "front")}>
         <img
@@ -58,7 +58,7 @@ const MerchProductCard = () => {
       <CardContent className="p-4 space-y-4">
         <div>
           <h3 className="text-lg font-bold text-foreground">Signature Collection Tee</h3>
-          <p className="text-xl font-bold text-primary mt-1">£29.99</p>
+          <p className="text-xl font-bold text-primary mt-1">A$29.99</p>
         </div>
 
         {/* Color swatches */}

@@ -13,12 +13,15 @@ import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";
 import NotFound from "./pages/NotFound";
+import BackgroundPig from "./components/BackgroundPig";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
   useCartSync();
   return (
+    <>
+    <BackgroundPig />
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/merch" element={<Merch />} />

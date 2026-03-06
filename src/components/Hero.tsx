@@ -39,10 +39,6 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowRight className="h-6 w-6 text-muted-foreground rotate-90" />
-      </div>
     </div>);
 
 };

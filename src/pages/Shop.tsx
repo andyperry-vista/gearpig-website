@@ -55,7 +55,7 @@ const Shop = () => {
         <section className="pb-16">
           <div className="container mx-auto px-4">
             <h2 className="text-2xl font-display text-foreground mb-6 neon-heading">
-              SHOP BY <span className="text-primary">CATEGORY</span>
+              SHOP BY CATEGORY
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-16">
               {ADULT_CATEGORIES.map((cat) => {

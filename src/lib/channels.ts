@@ -30,6 +30,10 @@ export const MERCH_CATEGORIES: ChannelCategory[] = [
 export const ADULT_CATEGORIES: ChannelCategory[] = [
   { slug: "kink-toys", name: "Kink Toys", description: "Curated pleasure & play", icon: Heart, query: "product_type:\"Kink Toys\" OR tag:kink-toys" },
   { slug: "gear-equipment", name: "Gear & Equipment", description: "Harnesses, restraints & more", icon: Wrench, query: "product_type:\"Gear & Equipment\" OR tag:gear-equipment" },
+  { slug: "pumps", name: "Penis Pumps", description: "Vacuum pumps & accessories", icon: Wrench, query: "product_type:Pumps OR tag:pumps OR tag:penis-pump" },
+  { slug: "sleeves-extenders", name: "Sleeves & Extenders", description: "Girth, texture & extension sleeves", icon: ShoppingBag, query: "product_type:Sleeves OR product_type:SLEEVES OR tag:sleeves OR tag:penis-extender" },
+  { slug: "hollow-strap-ons", name: "Hollow Strap-Ons", description: "Wearable hollow strap-ons & harness kits", icon: Flame, query: "product_type:Strap-Ons OR product_type:STRAP-ONS OR tag:hollow-strap-on OR tag:strap-ons" },
+  { slug: "swings", name: "Swings", description: "Positioning & support gear", icon: Watch, query: "product_type:Swings OR tag:swings" },
   { slug: "wellness-enhancers", name: "Wellness & Enhancers", description: "Body care & enhancers", icon: Sparkles, query: "product_type:\"Wellness & Enhancers\" OR tag:wellness-enhancers" },
   { slug: "technology", name: "Technology", description: "Connected toys & smart devices", icon: Cpu, query: "product_type:Technology OR tag:technology" },
 ];

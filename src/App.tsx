@@ -34,6 +34,9 @@ const AppContent = () => {
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:category" element={<ShopCategory />} />
       <Route path="/product/:handle" element={<ProductDetail />} />
+      <Route path="/catalog" element={<Catalog />} />
+      <Route path="/catalog/:category" element={<CatalogCategory />} />
+      <Route path="/catalog/product/:handle" element={<CatalogProduct />} />
       <Route path="/auth" element={<Auth />} />
       <Route path="/member" element={<Member />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

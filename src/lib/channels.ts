@@ -44,7 +44,6 @@ export const ADULT_CATEGORIES: ChannelCategory[] = [
     icon: Flame,
     query: "tag:bondage",
     dbCategories: ["BONDAGE-TOYS"],
-    featured: true,
   },
   {
     slug: "cock-rings",

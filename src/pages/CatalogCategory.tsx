@@ -1,0 +1,85 @@
+import { useParams, Link, Navigate } from "react-router-dom";
+import { Loader2, Package } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CatalogProductCard from "@/components/CatalogProductCard";
+import { useProducts } from "@/hooks/useProducts";
+import {
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbSeparator,
+  BreadcrumbPage,
+} from "@/components/ui/breadcrumb";
+
+const CatalogCategory = () => {
+  const { category } = useParams<{ category: string }>();
+  const decodedCategory = category ? decodeURIComponent(category) : "";
+  const { products, loading, error } = useProducts(500, decodedCategory);
+
+  if (!category) return <Navigate to="/catalog" replace />;
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="pt-20">
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <Breadcrumb className="mb-8">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/">Home</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbLink asChild>
+                    <Link to="/catalog">Catalog</Link>
+                  </BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{decodedCategory}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+
+            <div className="flex items-center gap-4 mb-10">
+              <div className="flex items-center justify-center h-14 w-14 rounded-lg border border-primary/30 bg-card">
+                <Package className="h-7 w-7 text-primary" />
+              </div>
+              <div>
+                <h1 className="text-3xl md:text-5xl font-display font-bold text-foreground neon-heading">
+                  {decodedCategory.toUpperCase()}
+                </h1>
+              </div>
+            </div>
+
+            {loading ? (
+              <div className="flex justify-center py-12">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+              </div>
+            ) : error ? (
+              <p className="text-center text-destructive py-12">{error}</p>
+            ) : products.length > 0 ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                {products.map((product) => (
+                  <CatalogProductCard key={product.id} product={product} />
+                ))}
+              </div>
+            ) : (
+              <p className="text-center text-muted-foreground py-12">
+                No products found in this category yet.
+              </p>
+            )}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default CatalogCategory;

@@ -16,6 +16,7 @@ import Member from "./pages/Member";
 import Catalog from "./pages/Catalog";
 import CatalogCategory from "./pages/CatalogCategory";
 import CatalogProduct from "./pages/CatalogProduct";
+import ImportProducts from "./pages/ImportProducts";
 import NotFound from "./pages/NotFound";
 import BackgroundPig from "./components/BackgroundPig";
 

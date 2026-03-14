@@ -66,7 +66,7 @@ const Shop = () => {
                   <Link
                     key={cat.slug}
                     to={`/shop/${cat.slug}`}
-                    className={`group flex flex-col items-center gap-3 rounded-lg border border-primary/30 bg-card p-6 text-center transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_hsl(334_100%_50%/0.15)] ${cat.featured ? "sm:col-span-2 lg:col-span-4" : ""}`}
+                    className="group flex flex-col items-center gap-3 rounded-lg border border-primary/30 bg-card p-6 text-center transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_hsl(334_100%_50%/0.15)]"
                   >
                     <Icon className="h-8 w-8 text-secondary group-hover:text-primary transition-colors" />
                     <span className="font-bold text-foreground text-sm">{cat.name}</span>

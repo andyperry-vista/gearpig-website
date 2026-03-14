@@ -89,6 +89,93 @@ export type Database = {
         }
         Relationships: []
       }
+      products: {
+        Row: {
+          barcode: string | null
+          category: string | null
+          compare_at_price: number | null
+          created_at: string
+          currency_code: string
+          description: string | null
+          handle: string
+          id: string
+          image_url: string | null
+          images: string[] | null
+          option1_name: string | null
+          option1_value: string | null
+          option2_name: string | null
+          option2_value: string | null
+          option3_name: string | null
+          option3_value: string | null
+          price: number
+          published: boolean
+          seo_description: string | null
+          seo_title: string | null
+          sku: string | null
+          tags: string[] | null
+          title: string
+          updated_at: string
+          variants: Json | null
+          vendor: string | null
+        }
+        Insert: {
+          barcode?: string | null
+          category?: string | null
+          compare_at_price?: number | null
+          created_at?: string
+          currency_code?: string
+          description?: string | null
+          handle: string
+          id?: string
+          image_url?: string | null
+          images?: string[] | null
+          option1_name?: string | null
+          option1_value?: string | null
+          option2_name?: string | null
+          option2_value?: string | null
+          option3_name?: string | null
+          option3_value?: string | null
+          price?: number
+          published?: boolean
+          seo_description?: string | null
+          seo_title?: string | null
+          sku?: string | null
+          tags?: string[] | null
+          title: string
+          updated_at?: string
+          variants?: Json | null
+          vendor?: string | null
+        }
+        Update: {
+          barcode?: string | null
+          category?: string | null
+          compare_at_price?: number | null
+          created_at?: string
+          currency_code?: string
+          description?: string | null
+          handle?: string
+          id?: string
+          image_url?: string | null
+          images?: string[] | null
+          option1_name?: string | null
+          option1_value?: string | null
+          option2_name?: string | null
+          option2_value?: string | null
+          option3_name?: string | null
+          option3_value?: string | null
+          price?: number
+          published?: boolean
+          seo_description?: string | null
+          seo_title?: string | null
+          sku?: string | null
+          tags?: string[] | null
+          title?: string
+          updated_at?: string
+          variants?: Json | null
+          vendor?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string

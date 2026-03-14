@@ -1,1 +1,4 @@
 project_id = "mrskskywwgsrpzftttmc"
+
+[functions.sync-dropship]
+verify_jwt = false

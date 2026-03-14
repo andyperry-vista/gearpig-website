@@ -13,6 +13,10 @@ import MerchCategory from "./pages/MerchCategory";
 import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";
+import Catalog from "./pages/Catalog";
+import CatalogCategory from "./pages/CatalogCategory";
+import CatalogProduct from "./pages/CatalogProduct";
+import ImportProducts from "./pages/ImportProducts";
 import NotFound from "./pages/NotFound";
 import BackgroundPig from "./components/BackgroundPig";
 
@@ -31,6 +35,10 @@ const AppContent = () => {
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:category" element={<ShopCategory />} />
       <Route path="/product/:handle" element={<ProductDetail />} />
+      <Route path="/catalog" element={<Catalog />} />
+      <Route path="/catalog/:category" element={<CatalogCategory />} />
+      <Route path="/catalog/product/:handle" element={<CatalogProduct />} />
+      <Route path="/import" element={<ImportProducts />} />
       <Route path="/auth" element={<Auth />} />
       <Route path="/member" element={<Member />} />
       {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

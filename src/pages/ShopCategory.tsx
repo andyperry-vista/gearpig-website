@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import { useDropshipProducts } from "@/hooks/useDropshipProducts";
+import { usePublishedProducts } from "@/hooks/usePublishedProducts";
 import {
   Breadcrumb,
   BreadcrumbList,
@@ -21,9 +22,11 @@ const ShopCategory = () => {
 
   const { products: shopifyProducts, loading: sLoading, error: sError } = useShopifyProducts(50, cat?.query);
   const { products: dbProducts, loading: dLoading, error: dError } = useDropshipProducts(50, cat?.slug);
-  const products = [...shopifyProducts, ...dbProducts];
-  const loading = sLoading || dLoading;
-  const error = sError || dError;
+  const { products: catalogProducts, loading: cLoading, error: cError } = usePublishedProducts(200, cat?.dbCategories);
+
+  const products = [...shopifyProducts, ...dbProducts, ...catalogProducts];
+  const loading = sLoading || dLoading || cLoading;
+  const error = sError || dError || cError;
 
   if (!cat) return <Navigate to="/shop" replace />;
 

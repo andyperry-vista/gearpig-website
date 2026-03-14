@@ -7,16 +7,18 @@ import ProductCard from "@/components/ProductCard";
 import { Input } from "@/components/ui/input";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { useDropshipProducts } from "@/hooks/useDropshipProducts";
+import { usePublishedProducts } from "@/hooks/usePublishedProducts";
 import { ADULT_CATEGORIES } from "@/lib/channels";
 
 const Shop = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const { products: shopifyProducts, loading: sLoading, error: sError } = useShopifyProducts(50, "tag:kink-toys OR tag:gear-equipment OR tag:wellness OR tag:adult OR tag:technology");
   const { products: dbProducts, loading: dLoading, error: dError } = useDropshipProducts(50);
+  const { products: catalogProducts, loading: cLoading, error: cError } = usePublishedProducts(200);
 
-  const loading = sLoading || dLoading;
-  const error = sError || dError;
-  const allProducts = [...shopifyProducts, ...dbProducts];
+  const loading = sLoading || dLoading || cLoading;
+  const error = sError || dError || cError;
+  const allProducts = [...shopifyProducts, ...dbProducts, ...catalogProducts];
 
   const filtered = useMemo(() => {
     if (!searchQuery) return allProducts;
@@ -64,7 +66,7 @@ const Shop = () => {
                   <Link
                     key={cat.slug}
                     to={`/shop/${cat.slug}`}
-                    className="group flex flex-col items-center gap-3 rounded-lg border border-primary/30 bg-card p-6 text-center transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_hsl(334_100%_50%/0.15)]"
+                    className={`group flex flex-col items-center gap-3 rounded-lg border border-primary/30 bg-card p-6 text-center transition-all duration-300 hover:border-primary hover:shadow-[0_0_20px_hsl(334_100%_50%/0.15)] ${cat.featured ? "sm:col-span-2 lg:col-span-4" : ""}`}
                   >
                     <Icon className="h-8 w-8 text-secondary group-hover:text-primary transition-colors" />
                     <span className="font-bold text-foreground text-sm">{cat.name}</span>

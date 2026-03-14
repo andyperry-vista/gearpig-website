@@ -13,6 +13,9 @@ import MerchCategory from "./pages/MerchCategory";
 import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";
+import Catalog from "./pages/Catalog";
+import CatalogCategory from "./pages/CatalogCategory";
+import CatalogProduct from "./pages/CatalogProduct";
 import NotFound from "./pages/NotFound";
 import BackgroundPig from "./components/BackgroundPig";
 

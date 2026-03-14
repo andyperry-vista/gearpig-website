@@ -1,4 +1,4 @@
-import { Shirt, Watch, Heart, Wrench, Sparkles, Cpu, ShoppingBag, Flame, Dumbbell, type LucideIcon } from "lucide-react";
+import { Shirt, Watch, Heart, Wrench, Sparkles, Cpu, ShoppingBag, Flame, Dumbbell, Zap, CircleDot, Pill, Droplets, Gamepad2, type LucideIcon } from "lucide-react";
 
 export interface ChannelCategory {
   slug: string;
@@ -6,7 +6,8 @@ export interface ChannelCategory {
   description: string;
   icon: LucideIcon;
   query: string; // Shopify search query
-  featured?: boolean; // spans full row when true
+  dbCategories?: string[]; // matches products.category values
+  featured?: boolean;
 }
 
 export interface Channel {
@@ -28,14 +29,135 @@ export const MERCH_CATEGORIES: ChannelCategory[] = [
 ];
 
 export const ADULT_CATEGORIES: ChannelCategory[] = [
-  { slug: "kink-toys", name: "Kink Toys", description: "Curated pleasure & play", icon: Heart, query: "product_type:\"Kink Toys\" OR tag:kink-toys" },
-  { slug: "gear-equipment", name: "Gear & Equipment", description: "Harnesses, restraints & more", icon: Wrench, query: "product_type:\"Gear & Equipment\" OR tag:gear-equipment" },
-  { slug: "pumps", name: "Penis Pumps", description: "Vacuum pumps & accessories", icon: Wrench, query: "product_type:Pumps OR tag:pumps OR tag:penis-pump" },
-  { slug: "sleeves-extenders", name: "Sleeves & Extenders", description: "Girth, texture & extension sleeves", icon: ShoppingBag, query: "product_type:Sleeves OR product_type:SLEEVES OR tag:sleeves OR tag:penis-extender" },
-  { slug: "hollow-strap-ons", name: "Hollow Strap-Ons", description: "Wearable hollow strap-ons & harness kits", icon: Flame, query: "product_type:Strap-Ons OR product_type:STRAP-ONS OR tag:hollow-strap-on OR tag:strap-ons" },
-  { slug: "swings", name: "Swings", description: "Positioning & support gear", icon: Watch, query: "product_type:Swings OR tag:swings" },
-  { slug: "wellness-enhancers", name: "Wellness & Enhancers", description: "Body care & enhancers", icon: Sparkles, query: "product_type:\"Wellness & Enhancers\" OR tag:wellness-enhancers" },
-  { slug: "technology", name: "Technology", description: "Connected toys & smart devices", icon: Cpu, query: "product_type:Technology OR tag:technology" },
+  {
+    slug: "anal-toys",
+    name: "Anal Toys",
+    description: "Plugs, beads & prostate toys",
+    icon: Heart,
+    query: "tag:anal-toys",
+    dbCategories: ["ANAL TOYS", "ANAL TOYS-PREMIUM"],
+  },
+  {
+    slug: "bondage-kink",
+    name: "Bondage & Kink",
+    description: "Restraints, cuffs & impact play",
+    icon: Flame,
+    query: "tag:bondage",
+    dbCategories: ["BONDAGE-TOYS"],
+    featured: true,
+  },
+  {
+    slug: "cock-rings",
+    name: "Cock Rings",
+    description: "Vibrating & non-vibrating rings",
+    icon: CircleDot,
+    query: "tag:cock-rings",
+    dbCategories: ["COCK RINGS", "COCK RINGS-PREMIUM"],
+  },
+  {
+    slug: "dongs",
+    name: "Dongs & Dildos",
+    description: "Realistic, fantasy & glass dongs",
+    icon: Wrench,
+    query: "tag:dongs",
+    dbCategories: ["DONGS", "DONGS-PREMIUM", "GLASS TOYS", "GLASS TOYS-PREMIUM"],
+  },
+  {
+    slug: "masturbators",
+    name: "Masturbators",
+    description: "Strokers, sleeves & auto toys",
+    icon: ShoppingBag,
+    query: "tag:masturbators",
+    dbCategories: ["MASTURBATORS", "MASTURBATORS-PREMIUM", "DOLLS"],
+  },
+  {
+    slug: "vibrators",
+    name: "Vibrators & Stimulators",
+    description: "Prostate vibes, bullets & wands",
+    icon: Zap,
+    query: "tag:vibrators OR tag:stimulators",
+    dbCategories: ["VIBRATORS", "VIBRATORS-PREMIUM", "VIBRATORS-RABBIT", "BULLETS & EGGS", "BULLETS-PREMIUM", "STIMULATORS", "STIMULATORS-PREMIUM", "AIR PULSATION", "AIR PULSATION-PREMIUM"],
+  },
+  {
+    slug: "pumps",
+    name: "Penis Pumps",
+    description: "Vacuum pumps & accessories",
+    icon: Wrench,
+    query: "product_type:Pumps OR tag:pumps OR tag:penis-pump",
+    dbCategories: ["PUMPS"],
+  },
+  {
+    slug: "sleeves-extenders",
+    name: "Sleeves & Extenders",
+    description: "Girth, texture & extension sleeves",
+    icon: ShoppingBag,
+    query: "product_type:Sleeves OR tag:sleeves OR tag:penis-extender",
+    dbCategories: ["SLEEVES"],
+  },
+  {
+    slug: "strap-ons",
+    name: "Strap-Ons",
+    description: "Hollow strap-ons & harness kits",
+    icon: Flame,
+    query: "product_type:Strap-Ons OR tag:strap-ons",
+    dbCategories: ["STRAP-ONS"],
+  },
+  {
+    slug: "lubes-lotions",
+    name: "Lubes & Lotions",
+    description: "Water, silicone & hybrid lubes",
+    icon: Droplets,
+    query: "tag:lubes OR tag:lotions",
+    dbCategories: ["LOTIONS & LUBES", "LUBES-LOCAL", "CONDOMS", "BULK CONDOMS"],
+  },
+  {
+    slug: "enhancers",
+    name: "Enhancers",
+    description: "Performance & sensation enhancers",
+    icon: Sparkles,
+    query: "tag:enhancers",
+    dbCategories: ["ENHANCERS", "ENHANCERS-DISCOUNT"],
+  },
+  {
+    slug: "health-wellness",
+    name: "Health & Wellness",
+    description: "Body care & intimate health",
+    icon: Pill,
+    query: "tag:health-care OR tag:wellness",
+    dbCategories: ["HEALTH CARE", "HEALTH CARE-PREMIUM"],
+  },
+  {
+    slug: "e-stim",
+    name: "E-Stim",
+    description: "Electrostimulation toys & kits",
+    icon: Zap,
+    query: "tag:e-stim",
+    dbCategories: ["E-STIM TOYS"],
+  },
+  {
+    slug: "swings-machines",
+    name: "Swings & Machines",
+    description: "Positioning gear & sex machines",
+    icon: Watch,
+    query: "tag:swings OR tag:machines",
+    dbCategories: ["SWINGS", "MACHINES", "MACHINES-PREMIUM"],
+  },
+  {
+    slug: "lingerie",
+    name: "Lingerie & Body Wear",
+    description: "Harnesses, jocks & body wear",
+    icon: Shirt,
+    query: "tag:lingerie OR tag:body-wear",
+    dbCategories: ["LINGERIE & BODY WEAR", "GENDER EXPRESSION"],
+  },
+  {
+    slug: "novelties-games",
+    name: "Novelties & Games",
+    description: "Party games, candles & gifts",
+    icon: Gamepad2,
+    query: "tag:novelties OR tag:games",
+    dbCategories: ["NOVELTIES", "GAMES", "CANDLES", "KITS", "KEGEL TOYS", "KEGEL-PREMIUM", "BATTERIES", "SHIPPING EXTRAS"],
+  },
 ];
 
 export const MERCH_CHANNEL: Channel = {

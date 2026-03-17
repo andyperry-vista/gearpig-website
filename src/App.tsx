@@ -10,6 +10,7 @@ import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Merch from "./pages/Merch";
 import MerchCategory from "./pages/MerchCategory";
+import WearYourKink from "./pages/WearYourKink";
 import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";
@@ -31,6 +32,7 @@ const AppContent = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/merch" element={<Merch />} />
+      <Route path="/merch/wear-your-kink" element={<WearYourKink />} />
       <Route path="/merch/:category" element={<MerchCategory />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:category" element={<ShopCategory />} />

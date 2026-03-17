@@ -32,6 +32,7 @@ const AppContent = () => {
     <Routes>
       <Route path="/" element={<Index />} />
       <Route path="/merch" element={<Merch />} />
+      <Route path="/merch/wear-your-kink" element={<WearYourKink />} />
       <Route path="/merch/:category" element={<MerchCategory />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/shop/:category" element={<ShopCategory />} />

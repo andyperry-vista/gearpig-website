@@ -10,6 +10,7 @@ import Shop from "./pages/Shop";
 import ShopCategory from "./pages/ShopCategory";
 import Merch from "./pages/Merch";
 import MerchCategory from "./pages/MerchCategory";
+import WearYourKink from "./pages/WearYourKink";
 import ProductDetail from "./pages/ProductDetail";
 import Auth from "./pages/Auth";
 import Member from "./pages/Member";
